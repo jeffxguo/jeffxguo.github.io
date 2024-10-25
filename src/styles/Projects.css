@@ -1,0 +1,22 @@
+/* src/styles/Projects.css */
+#projects {
+    background-color: #2e2e2e;
+    /* Slightly lighter dark background */
+    padding: 50px;
+    margin: 20px auto 0 auto;
+    /* Center the sections horizontally and add margin at the bottom */
+    max-width: 1200px;
+    /* Set a maximum width for the sections */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    text-align: left;
+    /* Align text to the left */
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #projects {
+        padding: 20px;
+    }
+}

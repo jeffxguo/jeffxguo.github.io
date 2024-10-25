@@ -1,0 +1,35 @@
+/* src/styles/App.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Apply Roboto font */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #121212;
+  /* Dark background */
+  color: #ffffff;
+  /* Light text color */
+}
+
+.App {
+  text-align: center;
+}
+
+section {
+  padding: 50px;
+  margin: 0 auto;
+  /* Center the sections horizontally */
+  max-width: 1200px;
+  /* Set a maximum width for the sections */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  text-align: left;
+  /* Align text to the left */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+  }
+}

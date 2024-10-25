@@ -1,0 +1,126 @@
+/* src/styles/About.css */
+#about {
+    background-color: #1e1e1e;
+    /* Dark background */
+    padding: 50px;
+    margin: 50px auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding-top: 60px;
+    /* Adjust this value based on the height of your navbar */
+    text-align: left;
+    /* Align text to the left */
+    font-family: 'Roboto', sans-serif;
+    /* Apply Roboto font */
+    margin-bottom: 20px;
+}
+
+.about-intro {
+    font-size: 1rem;
+    /* Smaller font size */
+    font-family: 'Courier New', Courier, monospace;
+    /* Terminal-like font */
+    color: #bbbbbb;
+    /* Light gray color */
+    margin-bottom: 5px;
+    /* Space between intro and name */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide the overflowing text */
+    border-right: 0.15em solid #bbbbbb;
+    /* Cursor effect */
+    animation: typing 2s steps(10, end), blink-caret 0.75s step-end infinite;
+    /* Apply typing and blinking cursor animations */
+    animation-fill-mode: forwards;
+    /* Ensure the animation stays at the end state */
+}
+
+.about-name {
+    font-size: 2.5rem;
+    /* Large clean font for the name */
+    font-weight: bold;
+    color: #ffffff;
+    /* White color for the name */
+    opacity: 0;
+    /* Initially hidden */
+    animation: fadeInLeft 1s forwards 2s;
+    /* Apply fade-in animation with delay */
+}
+
+.about-description {
+    font-size: 1.2rem;
+    /* Smaller font for the description */
+    color: #cccccc;
+    /* Slightly different color for the description */
+    margin-top: 10px;
+    /* Space between name and description */
+    opacity: 0;
+    /* Initially hidden */
+    animation: fadeInLeft 1s forwards 2.5s;
+    /* Apply fade-in animation with delay */
+}
+
+/* Keyframe animation for typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 4.5em;
+    }
+
+    /* Adjust this value based on the length of the text */
+}
+
+/* Keyframe animation for blinking cursor */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #bbbbbb;
+    }
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+        /* Start from left */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        /* End at original position */
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #about {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .about-intro {
+        font-size: 0.9rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    .about-name {
+        font-size: 2rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    .about-description {
+        font-size: 1rem;
+        /* Adjust font size for smaller screens */
+    }
+}

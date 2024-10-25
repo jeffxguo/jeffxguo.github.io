@@ -1,0 +1,76 @@
+/* src/styles/Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  /* Dark background */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Ensure the navbar is above other content */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+}
+
+.navbar-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  /* Adjust the size as needed */
+  font-weight: 800;
+  /* ExtraBold weight */
+}
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  flex: 1;
+  /* Distribute space evenly */
+  text-align: center;
+  /* Center the text */
+}
+
+.navbar-links li a {
+  color: #ffffff;
+  /* Light text color */
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  /* Add padding for better click area */
+}
+
+.navbar-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    /* Stack the links vertically on small screens */
+    gap: 0;
+  }
+
+  .navbar-links li {
+    flex: none;
+    /* Remove flex property */
+  }
+
+  .navbar-links li a {
+    padding: 1rem;
+    /* Increase padding for better touch area */
+  }
+}
