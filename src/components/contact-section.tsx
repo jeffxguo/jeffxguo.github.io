@@ -1,114 +1,48 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { useActionState } from 'react';
+import { sendEmail, ContactFormState } from '@/app/actions';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { useEffect } from 'react';
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.',
-  }),
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
-  }),
-});
+const initialState: ContactFormState = {
+  success: false,
+  message: '',
+};
 
 export function ContactSection() {
+  const [state, formAction] = useActionState(sendEmail, initialState);
   const { toast } = useToast();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-  });
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, you would send this data to a server
-    console.log(values);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    toast({
-      title: 'Message Sent!',
-      description: 'Thanks for reaching out. I will get back to you soon.',
-    });
-
-    form.reset();
-  }
+  useEffect(() => {
+    if (state.message) {
+      toast({
+        title: state.success ? 'Success!' : 'Error',
+        description: state.message,
+        variant: state.success ? 'default' : 'destructive',
+      });
+    }
+  }, [state, toast]);
 
   return (
-    <section id="contact" className="w-full py-24 sm:py-32">
-      <div className="container">
-        <Card className="max-w-2xl mx-auto">
-          <CardHeader>
-            <CardTitle className="text-3xl font-bold tracking-tighter sm:text-4xl">Get In Touch</CardTitle>
-            <CardDescription className="text-muted-foreground md:text-xl">
-              Have a project in mind or just want to say hi? Fill out the form below.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Your Name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input placeholder="your.email@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea placeholder="Your message..." className="min-h-[150px]" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-                  {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-      </div>
+    <section id="contact" className="container py-24 sm:py-32">
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-4xl font-bold text-center">Contact Me</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form action={formAction} className="grid gap-4">
+            <Input placeholder="Name" name="name" />
+            <Input placeholder="Email" type="email" name="email" />
+            <Textarea placeholder="Message" name="message" />
+            <Button>Send Message</Button>
+          </form>
+        </CardContent>
+      </Card>
     </section>
   );
 }

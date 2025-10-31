@@ -1,7 +1,7 @@
 import type { ImagePlaceholder } from './placeholder-images';
 import { PlaceHolderImages } from './placeholder-images';
 
-export type Technology = 'React' | 'Next.js' | 'TypeScript' | 'Tailwind CSS' | 'Firebase' | 'Shadcn UI';
+export type Technology = 'Python' | 'Docker' | 'React' | 'Next.js' | 'Node.js' | 'TypeScript' | 'Tailwind CSS' | 'Firebase' | 'Pytorch';
 
 export type Project = {
   title: string;
@@ -24,9 +24,9 @@ const findImage = (id: string): ImagePlaceholder => {
 
 export const projects: Project[] = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A feature-rich e-commerce platform with a modern UI, product management, and a secure checkout process.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+    title: 'Video Keyframes to Summary Neural Network',
+    description: 'A pipeline to automatically generate video summaries by extracting important keyframes, captioning them, then stitching them together',
+    technologies: ['Python', 'Pytorch'],
     image: findImage('project-1'),
     links: {
       github: 'https://github.com',
@@ -36,7 +36,7 @@ export const projects: Project[] = [
   {
     title: 'Data Analytics Dashboard',
     description: 'An interactive dashboard for visualizing complex data sets, with real-time updates and customizable widgets.',
-    technologies: ['React', 'TypeScript', 'Shadcn UI', 'Tailwind CSS'],
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
     image: findImage('project-2'),
     links: {
       github: 'https://github.com',
@@ -56,7 +56,7 @@ export const projects: Project[] = [
   {
     title: 'Portfolio Website',
     description: 'A personal portfolio website to showcase my skills and projects, built with a focus on design and user experience.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Shadcn UI'],
+    technologies: ['Next.js', 'React', 'TypeScript'],
     image: findImage('project-4'),
     links: {
       github: 'https://github.com',

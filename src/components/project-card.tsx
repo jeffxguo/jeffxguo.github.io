@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Github, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { TechnologyIcon } from './icons';
 
@@ -52,7 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.links.github && (
             <Button variant="ghost" size="icon" asChild>
               <Link href={project.links.github} target="_blank">
-                <Github />
+                <Image src="/github-mark-white.svg" alt="GitHub" width={16} height={16} />
                 <span className="sr-only">GitHub</span>
               </Link>
             </Button>

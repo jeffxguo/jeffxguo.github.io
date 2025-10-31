@@ -8,7 +8,7 @@ export function Header() {
         <nav className="flex items-center space-x-6 text-sm font-medium w-full">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <MountainIcon className="h-6 w-6" />
-            <span className="font-bold sm:inline-block">Dev Showcase</span>
+            <span className="font-bold sm:inline-block">Jeffrey Guo</span>
           </Link>
           <div className="flex-1"></div>
            <Link
