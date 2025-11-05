@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Jeffrey Guo',
   description: 'A modern portfolio to showcase development projects.',
   icons: {
-    icon: '/avatar.png',
+    icon: '/icon.svg',
   },
 };
 
