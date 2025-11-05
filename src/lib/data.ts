@@ -34,7 +34,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Concert with Friends',
-    description: 'A collaborative task management application designed for teams to organize, track, and complete projects efficiently.',
+    description: 'A full-stack React web application designed for users to form groups and attend concerts together.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Mongoose'],
     image: findImage('concert-with-friends'),
     links: {
