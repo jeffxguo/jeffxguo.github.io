@@ -35,7 +35,7 @@ jobs:
           personal_token: ${{ secrets.GH_PAGES_PAT }}
           publish_dir: ./out
           external_repository: jeffxguo/jeffxguo.github.io
-          publish_branch: main
+          publish_branch: gh-pages
           keep_files: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
