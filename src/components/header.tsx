@@ -23,12 +23,12 @@ export function Header() {
           >
             Projects
           </Link>
-          <Link
+          {/* <Link
             href="#contact"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Contact
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </header>
