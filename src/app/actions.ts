@@ -56,6 +56,7 @@ export async function sendEmail(
       message: 'Your message has been sent successfully!',
     };
   } catch (error) {
+    console.error('Error sending email:', error);
     return {
       success: false,
       message: 'An error occurred while sending the message. Please try again later.',

@@ -28,7 +28,7 @@ export function AboutSection() {
             </Button>
              <Button variant="outline" asChild>
               <a href="https://www.linkedin.com/in/jeffrey-guo-a42503167/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2" />
+                <Image src="linkedin.svg" alt="LinkedIn" width={16} height={16} className="mr-2" />
                 LinkedIn
               </a>
             </Button>
